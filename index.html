@@ -525,8 +525,58 @@
         .footer-name { font-family: var(--FD); font-size: 13px; font-weight: 500; color: var(--text); }
         .footer-copy { font-family: var(--FM); font-size: 11px; color: var(--muted); opacity: 0.6; margin-top: 2px; }
 
+        /* ── BACK TO TOP ── */
+        .back-to-top {
+          position: fixed;
+          bottom: 2rem;
+          right: 2rem;
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--surface);
+          border: 0.5px solid var(--border-s);
+          color: var(--text);
+          cursor: pointer;
+          z-index: 99;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          opacity: 0;
+          visibility: hidden;
+          box-shadow: 0 4px 12px rgba(15, 25, 35, 0.08);
+          border-radius: 4px;
+        }
+        .back-to-top.visible {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .back-to-top:not(.visible) {
+          transform: translateY(10px);
+        }
+        .back-to-top:hover {
+          background: var(--red);
+          color: white;
+          border-color: var(--red);
+          transform: translateY(-4px);
+          box-shadow: 0 6px 16px rgba(139, 26, 26, 0.25);
+        }
+        .back-to-top i {
+          font-size: 20px;
+          transition: transform 0.2s ease;
+        }
+        .back-to-top:hover i {
+          transform: translateY(-2px);
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
+          .back-to-top {
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+          }
           #home, .about-grid, .integrations-grid, .contact-grid {
             grid-template-columns: 1fr;
           }
@@ -887,6 +937,33 @@
         <div class="footer-copy">© 2026 IPronet. All rights reserved.</div>
     </div>
 </footer>
+
+<!-- Floating Back to Top Button -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="ti ti-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script>
+    (function() {
+      var backToTopBtn = document.getElementById('back-to-top');
+      if (!backToTopBtn) return;
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    })();
+</script>
 
 </body>
 </html>
