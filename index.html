@@ -1,870 +1,892 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Adrian Dudek — Full-stack software engineer. 20+ years of experience, 50+ projects delivered. End-to-end product development from architecture to deployment." />
-  <meta name="author" content="Adrian Dudek / IPronet" />
-  <meta property="og:title" content="Adrian Dudek — Full-stack Software Engineer" />
-  <meta property="og:description" content="End-to-end product development — from architecture to deployment. Clean code, clear communication, delivered on time." />
-  <meta property="og:type" content="website" />
-  <title>Adrian Dudek — Full-stack Software Engineer | IPronet</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Adrian Dudek — Full-stack software engineer. 20+ years of experience, 50+ projects delivered. End-to-end product development from architecture to deployment." />
+    <meta name="author" content="Adrian Dudek / IPronet" />
+    <meta property="og:title" content="Adrian Dudek — Full-stack Software Engineer" />
+    <meta property="og:description" content="End-to-end product development — from architecture to deployment. Clean code, clear communication, delivered on time." />
+    <meta property="og:type" content="website" />
+    <title>Adrian Dudek — Full-stack Software Engineer | IPronet</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --red:        #8B1A1A;
-      --blue:       #4a6f96;
-      --blue-light: #e8eef5;
-      --bg:         #f8f7f4;
-      --surface:    #ffffff;
-      --border:     rgba(74,111,150,0.18);
-      --border-s:   rgba(74,111,150,0.32);
-      --text:       #0f1923;
-      --muted:      #5a6a7a;
-      --code-bg:    #0d1b2a;
-      --FD: 'Syne', sans-serif;
-      --FM: 'JetBrains Mono', monospace;
-    }
+        :root {
+          --red:        #8B1A1A;
+          --blue:       #4a6f96;
+          --blue-light: #e8eef5;
+          --bg:         #f8f7f4;
+          --surface:    #ffffff;
+          --border:     rgba(74,111,150,0.18);
+          --border-s:   rgba(74,111,150,0.32);
+          --text:       #0f1923;
+          --muted:      #5a6a7a;
+          --code-bg:    #0d1b2a;
+          --FD: 'Space Grotesk', sans-serif;
+          --FM: 'JetBrains Mono', monospace;
+        }
 
-    html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--FD);
-      line-height: 1.6;
-    }
+        body {
+          background: var(--bg);
+          color: var(--text);
+          font-family: var(--FD);
+          line-height: 1.6;
+        }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.8rem 2.5rem;
-      border-bottom: 0.5px solid var(--border-s);
-      background: rgba(248,247,244,0.97);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(6px);
-    }
-    .nav-logo img { height: 44px; display: block; }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a {
-      font-family: var(--FM);
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      font-family: var(--FM);
-      font-size: 12px;
-      padding: 7px 18px;
-      border: 0.5px solid var(--red);
-      color: var(--red);
-      background: transparent;
-      cursor: pointer;
-      letter-spacing: 0.06em;
-      transition: background 0.2s, color 0.2s;
-    }
-    .nav-cta:hover { background: var(--red); color: white; }
+        /* ── NAV ── */
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.8rem 2.5rem;
+          border-bottom: 0.5px solid var(--border-s);
+          background: rgba(248,247,244,0.97);
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          backdrop-filter: blur(6px);
+        }
+        .nav-logo {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          text-decoration: none;
+        }
+        .nav-logo img {
+          height: 44px;
+          display: block;
+          background: transparent;
+        }
+        .nav-logo-name {
+          font-family: var(--FD);
+          font-size: 17px;
+          font-weight: 700;
+          color: var(--text);
+          letter-spacing: -0.5px;
+          line-height: 1.08;
+          white-space: nowrap;
+        }
+        .nav-logo-name em {
+          color: var(--red);
+          font-style: normal;
+        }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a {
+          font-family: var(--FM);
+          font-size: 15px;
+          color: var(--muted);
+          text-decoration: none;
+          letter-spacing: 0.04em;
+          transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta {
+          font-family: var(--FM);
+          font-size: 15px;
+          padding: 7px 18px;
+          border: 0.5px solid var(--red);
+          color: var(--red);
+          background: transparent;
+          cursor: pointer;
+          letter-spacing: 0.04em;
+          transition: background 0.2s, color 0.2s;
+          text-decoration: none;
+        }
+        .nav-cta:hover { background: var(--red); color: white; }
 
-    /* ── HERO ── */
-    #home {
-      padding: 5rem 2.5rem;
-      border-bottom: 0.5px solid var(--border-s);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-tag {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: var(--blue);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .hero-tag::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 0.5px;
-      background: var(--blue);
-    }
-    #home h1 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -1.2px;
-      margin-bottom: 1.2rem;
-    }
-    #home h1 em { color: var(--red); font-style: normal; }
-    .hero-sub {
-      font-family: var(--FM);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 480px;
-      margin-bottom: 2rem;
-    }
-    .hero-actions { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
-    .btn-primary {
-      font-family: var(--FM);
-      font-size: 12px;
-      padding: 11px 26px;
-      background: var(--red);
-      color: white;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 0.08em;
-      transition: opacity 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary:hover { opacity: 0.85; }
-    .btn-ghost {
-      font-family: var(--FM);
-      font-size: 12px;
-      padding: 11px 26px;
-      border: 0.5px solid var(--border-s);
-      color: var(--muted);
-      background: transparent;
-      cursor: pointer;
-      letter-spacing: 0.08em;
-      transition: border-color 0.2s, color 0.2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-ghost:hover { border-color: var(--blue); color: var(--text); }
-    .hero-metrics {
-      display: flex;
-      gap: 2.5rem;
-      padding-top: 2rem;
-      border-top: 0.5px solid var(--border-s);
-    }
-    .metric-val { font-size: 1.8rem; font-weight: 700; color: var(--red); }
-    .metric-label {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+        /* ── HERO ── */
+        #home {
+          padding: 5rem 2.5rem;
+          border-bottom: 0.5px solid var(--border-s);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+        .hero-tag {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: var(--blue);
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .hero-tag::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 0.5px;
+          background: var(--blue);
+        }
+        #home h1 {
+          font-size: clamp(2.2rem, 4vw, 3.4rem);
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1.2px;
+          margin-bottom: 1.2rem;
+        }
+        #home h1 em { color: var(--red); font-style: normal; }
+        .hero-sub {
+          font-family: var(--FM);
+          font-size: 13px;
+          color: var(--muted);
+          line-height: 1.9;
+          max-width: 480px;
+          margin-bottom: 2rem;
+        }
+        .hero-actions { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+        .btn-primary {
+          font-family: var(--FM);
+          font-size: 12px;
+          padding: 11px 26px;
+          background: var(--red);
+          color: white;
+          border: none;
+          cursor: pointer;
+          letter-spacing: 0.08em;
+          transition: opacity 0.2s;
+          text-decoration: none;
+          display: inline-block;
+        }
+        .btn-primary:hover { opacity: 0.85; }
+        .btn-ghost {
+          font-family: var(--FM);
+          font-size: 12px;
+          padding: 11px 26px;
+          border: 0.5px solid var(--border-s);
+          color: var(--muted);
+          background: transparent;
+          cursor: pointer;
+          letter-spacing: 0.08em;
+          transition: border-color 0.2s, color 0.2s;
+          text-decoration: none;
+          display: inline-block;
+        }
+        .btn-ghost:hover { border-color: var(--blue); color: var(--text); }
+        .hero-metrics {
+          display: flex;
+          gap: 2.5rem;
+          padding-top: 2rem;
+          border-top: 0.5px solid var(--border-s);
+        }
+        .metric-val { font-size: 1.8rem; font-weight: 700; color: var(--red); }
+        .metric-label {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: var(--muted);
+          margin-top: 2px;
+        }
 
-    /* ── CODE BLOCK ── */
-    .code-block {
-      background: var(--code-bg);
-      border-radius: 4px;
-      overflow: hidden;
-      border: 0.5px solid rgba(168,216,240,0.15);
-    }
-    .code-header {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 14px;
-      border-bottom: 0.5px solid rgba(255,255,255,0.06);
-    }
-    .dot { width: 10px; height: 10px; border-radius: 50%; }
-    .dot-r { background: #ff5f57; }
-    .dot-y { background: #febc2e; }
-    .dot-g { background: #28c840; }
-    .code-filename {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: rgba(168,216,240,0.4);
-      margin-left: 6px;
-    }
-    .code-body {
-      padding: 1.2rem 1.4rem;
-      font-family: var(--FM);
-      font-size: 12px;
-      line-height: 1.8;
-      color: #a8d8f0;
-    }
-    .code-body .indent-1 { padding-left: 1.2rem; }
-    .code-body .indent-2 { padding-left: 2.4rem; }
-    .code-body .indent-3 { padding-left: 3.6rem; }
-    .c-comment { color: #4a7a6a; }
-    .c-kw     { color: #c792ea; }
-    .c-fn     { color: #82aaff; }
-    .c-str    { color: #c3e88d; }
-    .c-val    { color: #f78c6c; }
-    .c-type   { color: #ffcb6b; }
+        /* ── CODE BLOCK ── */
+        .code-block {
+          background: var(--code-bg);
+          border-radius: 4px;
+          overflow: hidden;
+          border: 0.5px solid rgba(168,216,240,0.15);
+        }
+        .code-header {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 10px 14px;
+          border-bottom: 0.5px solid rgba(255,255,255,0.06);
+        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-r { background: #ff5f57; }
+        .dot-y { background: #febc2e; }
+        .dot-g { background: #28c840; }
+        .code-filename {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: rgba(168,216,240,0.4);
+          margin-left: 6px;
+        }
+        .code-body {
+          padding: 1.2rem 1.4rem;
+          font-family: var(--FM);
+          font-size: 12px;
+          line-height: 1.8;
+          color: #a8d8f0;
+        }
+        .code-body .indent-1 { padding-left: 1.2rem; }
+        .code-body .indent-2 { padding-left: 2.4rem; }
+        .code-body .indent-3 { padding-left: 3.6rem; }
+        .c-comment { color: #4a7a6a; }
+        .c-kw     { color: #c792ea; }
+        .c-fn     { color: #82aaff; }
+        .c-str    { color: #c3e88d; }
+        .c-val    { color: #f78c6c; }
+        .c-type   { color: #ffcb6b; }
 
-    /* ── SECTIONS ── */
-    section {
-      padding: 4rem 2.5rem;
-      border-bottom: 0.5px solid var(--border-s);
-    }
-    .section-label {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: var(--blue);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .section-label::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 0.5px;
-      background: var(--blue);
-    }
+        /* ── SECTIONS ── */
+        section {
+          padding: 4rem 2.5rem;
+          border-bottom: 0.5px solid var(--border-s);
+        }
+        .section-label {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: var(--blue);
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .section-label::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 0.5px;
+          background: var(--blue);
+        }
 
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .about-grid h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-    }
-    .about-grid p {
-      font-family: var(--FM);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 1rem;
-    }
-    .skills-stack { display: flex; flex-direction: column; gap: 12px; }
-    .skill-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: var(--FM);
-      font-size: 12px;
-    }
-    .skill-name { color: var(--muted); width: 120px; flex-shrink: 0; }
-    .skill-bar { flex: 1; height: 2px; background: var(--blue-light); }
-    .skill-fill { height: 100%; background: var(--blue); }
-    .skill-pct { color: var(--muted); font-size: 11px; width: 30px; text-align: right; }
+        /* ── ABOUT ── */
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: start;
+        }
+        .about-grid h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+          margin-bottom: 1.2rem;
+        }
+        .about-grid p {
+          font-family: var(--FM);
+          font-size: 13px;
+          color: var(--muted);
+          line-height: 1.9;
+          margin-bottom: 1rem;
+        }
+        .skills-stack { display: flex; flex-direction: column; gap: 12px; }
+        .skill-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font-family: var(--FM);
+          font-size: 12px;
+        }
+        .skill-name { color: var(--muted); width: 120px; flex-shrink: 0; }
+        .skill-bar { flex: 1; height: 2px; background: var(--blue-light); }
+        .skill-fill { height: 100%; background: var(--blue); }
+        .skill-pct { color: var(--muted); font-size: 11px; width: 30px; text-align: right; }
 
-    /* ── TECH STACK ── */
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border-s);
-      border: 0.5px solid var(--border-s);
-    }
-    .stack-col { background: var(--surface); padding: 1.5rem; }
-    .stack-col-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 1.2rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 0.5px solid var(--border);
-    }
-    .stack-col-icon { font-size: 15px; color: var(--blue); }
-    .stack-col-title {
-      font-family: var(--FM);
-      font-size: 10px;
-      color: var(--blue);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-    .stack-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 0.5px solid var(--border);
-    }
-    .stack-item:last-child { border-bottom: none; }
-    .stack-name { font-family: var(--FM); font-size: 12px; color: var(--text); }
-    .stack-tag { font-family: var(--FM); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; }
+        /* ── TECH STACK ── */
+        .stack-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1px;
+          background: var(--border-s);
+          border: 0.5px solid var(--border-s);
+        }
+        .stack-col { background: var(--surface); padding: 1.5rem; }
+        .stack-col-header {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 1.2rem;
+          padding-bottom: 0.8rem;
+          border-bottom: 0.5px solid var(--border);
+        }
+        .stack-col-icon { font-size: 15px; color: var(--blue); }
+        .stack-col-title {
+          font-family: var(--FM);
+          font-size: 10px;
+          color: var(--blue);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        .stack-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px 0;
+          border-bottom: 0.5px solid var(--border);
+        }
+        .stack-item:last-child { border-bottom: none; }
+        .stack-name { font-family: var(--FM); font-size: 12px; color: var(--text); }
+        .stack-tag { font-family: var(--FM); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; }
 
-    /* ── PORTFOLIO ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-s);
-      border: 0.5px solid var(--border-s);
-    }
-    .project-card {
-      background: var(--surface);
-      padding: 1.5rem;
-      transition: background 0.2s;
-    }
-    .project-card:hover { background: var(--blue-light); }
-    .project-tag {
-      font-family: var(--FM);
-      font-size: 10px;
-      color: var(--blue);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
-    }
-    .project-title { font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; }
-    .project-desc {
-      font-family: var(--FM);
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-    .project-link {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      text-decoration: none;
-    }
-    .project-link:hover { text-decoration: underline; }
+        /* ── PORTFOLIO ── */
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1px;
+          background: var(--border-s);
+          border: 0.5px solid var(--border-s);
+        }
+        .project-card {
+          background: var(--surface);
+          padding: 1.5rem;
+          transition: background 0.2s;
+        }
+        .project-card:hover { background: var(--blue-light); }
+        .project-tag {
+          font-family: var(--FM);
+          font-size: 10px;
+          color: var(--blue);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          margin-bottom: 0.8rem;
+        }
+        .project-title { font-size: 15px; font-weight: 500; margin-bottom: 0.5rem; }
+        .project-desc {
+          font-family: var(--FM);
+          font-size: 12px;
+          color: var(--muted);
+          line-height: 1.7;
+          margin-bottom: 1rem;
+        }
+        .project-link {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: var(--red);
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          text-decoration: none;
+        }
+        .project-link:hover { text-decoration: underline; }
 
-    /* ── INTEGRATIONS ── */
-    .integrations-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .integrations-grid h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .integrations-grid > div > p {
-      font-family: var(--FM);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-bottom: 1.5rem;
-    }
-    .integration-item { display: flex; gap: 14px; margin-bottom: 1.2rem; }
-    .integration-icon { font-size: 18px; color: var(--blue); margin-top: 2px; flex-shrink: 0; }
-    .integration-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
-    .integration-desc {
-      font-family: var(--FM);
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .status-card {
-      background: var(--code-bg);
-      border-radius: 4px;
-      padding: 1.5rem;
-      border: 0.5px solid rgba(168,216,240,0.12);
-    }
-    .status-header {
-      font-family: var(--FM);
-      font-size: 11px;
-      color: rgba(168,216,240,0.4);
-      margin-bottom: 1rem;
-      letter-spacing: 0.08em;
-    }
-    .status-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      font-family: var(--FM);
-      font-size: 12px;
-      color: #a8d8f0;
-    }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #28c840; flex-shrink: 0; }
-    .status-bar-wrap { flex: 1; height: 2px; background: rgba(168,216,240,0.1); }
-    .status-bar { height: 100%; background: #4a6f96; }
-    .status-footer {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 0.5px solid rgba(168,216,240,0.1);
-      font-family: var(--FM);
-      font-size: 11px;
-      color: rgba(168,216,240,0.35);
-    }
+        /* ── INTEGRATIONS ── */
+        .integrations-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: start;
+        }
+        .integrations-grid h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+        }
+        .integrations-grid > div > p {
+          font-family: var(--FM);
+          font-size: 13px;
+          color: var(--muted);
+          line-height: 1.9;
+          margin-bottom: 1.5rem;
+        }
+        .integration-item { display: flex; gap: 14px; margin-bottom: 1.2rem; }
+        .integration-icon { font-size: 18px; color: var(--blue); margin-top: 2px; flex-shrink: 0; }
+        .integration-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+        .integration-desc {
+          font-family: var(--FM);
+          font-size: 12px;
+          color: var(--muted);
+          line-height: 1.7;
+        }
+        .status-card {
+          background: var(--code-bg);
+          border-radius: 4px;
+          padding: 1.5rem;
+          border: 0.5px solid rgba(168,216,240,0.12);
+        }
+        .status-header {
+          font-family: var(--FM);
+          font-size: 11px;
+          color: rgba(168,216,240,0.4);
+          margin-bottom: 1rem;
+          letter-spacing: 0.08em;
+        }
+        .status-row {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 10px;
+          font-family: var(--FM);
+          font-size: 12px;
+          color: #a8d8f0;
+        }
+        .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #28c840; flex-shrink: 0; }
+        .status-bar-wrap { flex: 1; height: 2px; background: rgba(168,216,240,0.1); }
+        .status-bar { height: 100%; background: #4a6f96; }
+        .status-footer {
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 0.5px solid rgba(168,216,240,0.1);
+          font-family: var(--FM);
+          font-size: 11px;
+          color: rgba(168,216,240,0.35);
+        }
 
-    /* ── SERVICES ── */
-    .service-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 0;
-      border-bottom: 0.5px solid var(--border-s);
-      transition: padding-left 0.2s;
-    }
-    .service-row:first-child { border-top: 0.5px solid var(--border-s); }
-    .service-row:hover { padding-left: 8px; }
-    .service-name { font-size: 15px; font-weight: 500; }
-    .service-tech { font-family: var(--FM); font-size: 11px; color: var(--muted); margin-top: 4px; }
+        /* ── SERVICES ── */
+        .service-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1.2rem 0;
+          border-bottom: 0.5px solid var(--border-s);
+          transition: padding-left 0.2s;
+        }
+        .service-row:first-child { border-top: 0.5px solid var(--border-s); }
+        .service-row:hover { padding-left: 8px; }
+        .service-name { font-size: 15px; font-weight: 500; }
+        .service-tech { font-family: var(--FM); font-size: 11px; color: var(--muted); margin-top: 4px; }
 
-    /* ── WRITING ── */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .article-card {
-      background: var(--surface);
-      border: 0.5px solid var(--border-s);
-      padding: 1.25rem 1.5rem;
-      transition: border-color 0.2s, background 0.2s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .article-card:hover { border-color: var(--blue); background: var(--blue-light); }
-    .article-date { font-family: var(--FM); font-size: 11px; color: var(--muted); margin-bottom: 0.5rem; }
-    .article-title { font-size: 14px; font-weight: 500; line-height: 1.4; }
-    .article-tag {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-family: var(--FM);
-      font-size: 10px;
-      color: var(--blue);
-      letter-spacing: 0.08em;
-    }
+        /* ── WRITING ── */
+        .articles-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+        .article-card {
+          background: var(--surface);
+          border: 0.5px solid var(--border-s);
+          padding: 1.25rem 1.5rem;
+          transition: border-color 0.2s, background 0.2s;
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
+        .article-card:hover { border-color: var(--blue); background: var(--blue-light); }
+        .article-date { font-family: var(--FM); font-size: 11px; color: var(--muted); margin-bottom: 0.5rem; }
+        .article-title { font-size: 14px; font-weight: 500; line-height: 1.4; }
+        .article-tag {
+          display: inline-block;
+          margin-top: 0.75rem;
+          font-family: var(--FM);
+          font-size: 10px;
+          color: var(--blue);
+          letter-spacing: 0.08em;
+        }
 
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-    .contact-grid h2 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 1rem;
-    }
-    .contact-grid > div > p {
-      font-family: var(--FM);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-    .contact-info { display: flex; flex-direction: column; gap: 14px; }
-    .contact-row { display: flex; align-items: center; gap: 12px; font-family: var(--FM); font-size: 13px; }
-    .contact-icon { color: var(--blue); font-size: 16px; }
-    .contact-val a { color: var(--muted); text-decoration: none; }
-    .contact-val a:hover { color: var(--text); }
-    .form-group { margin-bottom: 1rem; }
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      background: var(--surface);
-      border: 0.5px solid var(--border-s);
-      color: var(--text);
-      font-family: var(--FM);
-      font-size: 13px;
-      padding: 10px 14px;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--blue); }
-    .form-group textarea { height: 110px; resize: vertical; }
+        /* ── CONTACT ── */
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+        .contact-grid h2 {
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+          margin-bottom: 1rem;
+        }
+        .contact-grid > div > p {
+          font-family: var(--FM);
+          font-size: 13px;
+          color: var(--muted);
+          line-height: 1.8;
+          margin-bottom: 2rem;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 14px; }
+        .contact-row { display: flex; align-items: center; gap: 12px; font-family: var(--FM); font-size: 13px; }
+        .contact-icon { color: var(--blue); font-size: 16px; }
+        .contact-val a { color: var(--muted); text-decoration: none; }
+        .contact-val a:hover { color: var(--text); }
+        .form-group { margin-bottom: 1rem; }
+        .form-group input,
+        .form-group textarea {
+          width: 100%;
+          background: var(--surface);
+          border: 0.5px solid var(--border-s);
+          color: var(--text);
+          font-family: var(--FM);
+          font-size: 13px;
+          padding: 10px 14px;
+          outline: none;
+          transition: border-color 0.2s;
+          appearance: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus { border-color: var(--blue); }
+        .form-group textarea { height: 110px; resize: vertical; }
 
-    /* ── FOOTER ── */
-    footer {
-      padding: 1.5rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 0.5px solid var(--border-s);
-      background: var(--surface);
-    }
-    .footer-logo img { height: 34px; display: block; }
-    .footer-right { text-align: right; }
-    .footer-name { font-family: var(--FD); font-size: 13px; font-weight: 500; color: var(--text); }
-    .footer-copy { font-family: var(--FM); font-size: 11px; color: var(--muted); opacity: 0.6; margin-top: 2px; }
+        /* ── FOOTER ── */
+        footer {
+          padding: 1.5rem 2.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-top: 0.5px solid var(--border-s);
+          background: var(--surface);
+        }
+        .footer-logo img { height: 34px; display: block; background: transparent; }
+        .footer-right { text-align: right; }
+        .footer-name { font-family: var(--FD); font-size: 13px; font-weight: 500; color: var(--text); }
+        .footer-copy { font-family: var(--FM); font-size: 11px; color: var(--muted); opacity: 0.6; margin-top: 2px; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      #home, .about-grid, .integrations-grid, .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .stack-grid { grid-template-columns: repeat(2, 1fr); }
-      .projects-grid { grid-template-columns: 1fr; }
-      .articles-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      nav { padding: 0.8rem 1.5rem; }
-      #home, section { padding: 3rem 1.5rem; }
-      footer { padding: 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
-      .footer-right { text-align: center; }
-    }
-    @media (max-width: 480px) {
-      .stack-grid { grid-template-columns: 1fr; }
-      .hero-metrics { flex-direction: column; gap: 1rem; }
-    }
-  </style>
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+          #home, .about-grid, .integrations-grid, .contact-grid {
+            grid-template-columns: 1fr;
+          }
+          .stack-grid { grid-template-columns: repeat(2, 1fr); }
+          .projects-grid { grid-template-columns: 1fr; }
+          .articles-grid { grid-template-columns: 1fr; }
+          .nav-links { display: none; }
+          nav { padding: 0.8rem 1.5rem; }
+          #home, section { padding: 3rem 1.5rem; }
+          footer { padding: 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+          .footer-right { text-align: center; }
+        }
+        @media (max-width: 480px) {
+          .stack-grid { grid-template-columns: 1fr; }
+          .hero-metrics { flex-direction: column; gap: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">
-      <a href="#home"><img src="logo.png" alt="IPronet — Adrian Dudek" /></a>
-    </div>
+<!-- NAV -->
+<nav>
+    <a href="#home" class="nav-logo">
+        <img src="logo.png" alt="IPronet — Adrian Dudek" />
+        <span class="nav-logo-name">Adrian <em>Dudek</em></span>
+    </a>
     <div class="nav-links">
-      <a href="#about">about</a>
-      <a href="#portfolio">portfolio</a>
-      <a href="#stack">stack</a>
-      <a href="#writing">writing</a>
-      <a href="#contact">contact</a>
+        <a href="#about">about</a>
+        <a href="#portfolio">portfolio</a>
+        <a href="#stack">stack</a>
+        <a href="#writing">writing</a>
+        <a href="#contact">contact</a>
     </div>
     <a href="#contact" class="nav-cta">hire me</a>
-  </nav>
+</nav>
 
-  <!-- HERO -->
-  <div id="home">
+<!-- HERO -->
+<div id="home">
     <div>
-      <div class="hero-tag">Full-stack software engineer</div>
-      <h1>Building <em>robust</em><br>digital systems<br>that scale.</h1>
-      <p class="hero-sub">End-to-end product development — from architecture to deployment. Clean code, clear communication, delivered on time.</p>
-      <div class="hero-actions">
-        <a href="#portfolio" class="btn-primary">View portfolio →</a>
-        <a href="#contact" class="btn-ghost">Let's talk</a>
-      </div>
-      <div class="hero-metrics">
-        <div>
-          <div class="metric-val">20+</div>
-          <div class="metric-label">years of experience</div>
+        <div class="hero-tag">Full-stack software engineer</div>
+        <h1>Building <em>robust</em><br>digital systems<br>that scale.</h1>
+        <p class="hero-sub">End-to-end product development — from architecture to deployment. Clean code, clear communication, delivered on time.</p>
+        <div class="hero-actions">
+            <a href="#portfolio" class="btn-primary">View portfolio →</a>
+            <a href="#contact" class="btn-ghost">Let's talk</a>
         </div>
-        <div>
-          <div class="metric-val">50+</div>
-          <div class="metric-label">projects delivered</div>
+        <div class="hero-metrics">
+            <div>
+                <div class="metric-val">20+</div>
+                <div class="metric-label">years of experience</div>
+            </div>
+            <div>
+                <div class="metric-val">50+</div>
+                <div class="metric-label">projects delivered</div>
+            </div>
+            <div>
+                <div class="metric-val">12</div>
+                <div class="metric-label">articles published</div>
+            </div>
         </div>
-        <div>
-          <div class="metric-val">12</div>
-          <div class="metric-label">articles published</div>
-        </div>
-      </div>
     </div>
     <div class="code-block">
-      <div class="code-header">
-        <div class="dot dot-r"></div>
-        <div class="dot dot-y"></div>
-        <div class="dot dot-g"></div>
-        <span class="code-filename">architecture.ts</span>
-      </div>
-      <div class="code-body">
-        <div><span class="c-kw">class</span> <span class="c-type">SystemArchitecture</span> {</div>
-        <div class="indent-1"><span class="c-fn">constructor</span>() {</div>
-        <div class="indent-2"><span class="c-kw">this</span>.reliability = <span class="c-val">true</span>;</div>
-        <div class="indent-2"><span class="c-kw">this</span>.scalable = <span class="c-str">"always"</span>;</div>
-        <div class="indent-1">}</div>
-        <div>&nbsp;</div>
-        <div class="indent-1"><span class="c-kw">async</span> <span class="c-fn">deploy</span>(module) {</div>
-        <div class="indent-2"><span class="c-kw">await</span> cloud.<span class="c-fn">provision</span>(module);</div>
-        <div class="indent-2"><span class="c-comment">// CI/CD pipeline active</span></div>
-        <div class="indent-2"><span class="c-kw">return</span> <span class="c-str">"production"</span>;</div>
-        <div class="indent-1">}</div>
-        <div>&nbsp;</div>
-        <div class="indent-1"><span class="c-fn">solve</span>(problem: <span class="c-type">Challenge</span>) {</div>
-        <div class="indent-2"><span class="c-kw">return</span> <span class="c-kw">new</span> <span class="c-type">Solution</span>({</div>
-        <div class="indent-3">elegant: <span class="c-val">true</span>,</div>
-        <div class="indent-3">maintainable: <span class="c-val">true</span></div>
-        <div class="indent-2">});</div>
-        <div class="indent-1">}</div>
-        <div>}</div>
-      </div>
+        <div class="code-header">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <span class="code-filename">architecture.ts</span>
+        </div>
+        <div class="code-body">
+            <div><span class="c-kw">class</span> <span class="c-type">SystemArchitecture</span> {</div>
+            <div class="indent-1"><span class="c-fn">constructor</span>() {</div>
+            <div class="indent-2"><span class="c-kw">this</span>.reliability = <span class="c-val">true</span>;</div>
+            <div class="indent-2"><span class="c-kw">this</span>.scalable = <span class="c-str">"always"</span>;</div>
+            <div class="indent-1">}</div>
+            <div>&nbsp;</div>
+            <div class="indent-1"><span class="c-kw">async</span> <span class="c-fn">deploy</span>(module) {</div>
+            <div class="indent-2"><span class="c-kw">await</span> cloud.<span class="c-fn">provision</span>(module);</div>
+            <div class="indent-2"><span class="c-comment">// CI/CD pipeline active</span></div>
+            <div class="indent-2"><span class="c-kw">return</span> <span class="c-str">"production"</span>;</div>
+            <div class="indent-1">}</div>
+            <div>&nbsp;</div>
+            <div class="indent-1"><span class="c-fn">solve</span>(problem: <span class="c-type">Challenge</span>) {</div>
+            <div class="indent-2"><span class="c-kw">return</span> <span class="c-kw">new</span> <span class="c-type">Solution</span>({</div>
+            <div class="indent-3">elegant: <span class="c-val">true</span>,</div>
+            <div class="indent-3">maintainable: <span class="c-val">true</span></div>
+            <div class="indent-2">});</div>
+            <div class="indent-1">}</div>
+            <div>}</div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- ABOUT -->
-  <section id="about">
+<!-- ABOUT -->
+<section id="about">
     <div class="section-label">About</div>
     <div class="about-grid">
-      <div>
-        <h2>Engineering solutions, not just code.</h2>
-        <p>I'm Adrian Dudek, a full-stack engineer with over 20 years of experience building maintainable, well-architected systems. I work across the entire stack — backend services, APIs, databases, and modern frontend interfaces.</p>
-        <p>I partner with startups and established companies to turn complex requirements into working software. Whether greenfield or legacy, I deliver pragmatic solutions that last.</p>
-      </div>
-      <div class="skills-stack">
-        <div class="skill-row">
-          <span class="skill-name">Backend / APIs</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-          <span class="skill-pct">92%</span>
+        <div>
+            <h2>Engineering solutions, not just code.</h2>
+            <p>I'm Adrian Dudek, a full-stack engineer with over 20 years of experience building maintainable, well-architected systems. I work across the entire stack — backend services, APIs, databases, and modern frontend interfaces.</p>
+            <p>I partner with startups and established companies to turn complex requirements into working software. Whether greenfield or legacy, I deliver pragmatic solutions that last.</p>
         </div>
-        <div class="skill-row">
-          <span class="skill-name">Frontend / React</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-          <span class="skill-pct">85%</span>
+        <div class="skills-stack">
+            <div class="skill-row">
+                <span class="skill-name">Backend / APIs</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+                <span class="skill-pct">92%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Frontend / React</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Databases</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+                <span class="skill-pct">88%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">DevOps / CI-CD</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:74%"></div></div>
+                <span class="skill-pct">74%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Architecture</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">AI / Integrations</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+                <span class="skill-pct">70%</span>
+            </div>
         </div>
-        <div class="skill-row">
-          <span class="skill-name">Databases</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-          <span class="skill-pct">88%</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">DevOps / CI-CD</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:74%"></div></div>
-          <span class="skill-pct">74%</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">Architecture</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-          <span class="skill-pct">80%</span>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">AI / Integrations</span>
-          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
-          <span class="skill-pct">70%</span>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- TECH STACK -->
-  <section id="stack">
+<!-- TECH STACK -->
+<section id="stack">
     <div class="section-label">Tech stack</div>
     <div class="stack-grid">
-      <div class="stack-col">
-        <div class="stack-col-header">
-          <i class="ti ti-layout stack-col-icon" aria-hidden="true"></i>
-          <span class="stack-col-title">Frontend</span>
+        <div class="stack-col">
+            <div class="stack-col-header">
+                <i class="ti ti-layout stack-col-icon" aria-hidden="true"></i>
+                <span class="stack-col-title">Frontend</span>
+            </div>
+            <div class="stack-item"><span class="stack-name">React / Next.js</span><span class="stack-tag">Primary</span></div>
+            <div class="stack-item"><span class="stack-name">TypeScript</span><span class="stack-tag">Core</span></div>
+            <div class="stack-item"><span class="stack-name">Tailwind CSS</span><span class="stack-tag">Styling</span></div>
+            <div class="stack-item"><span class="stack-name">Modern JS (ES6+)</span><span class="stack-tag">Full</span></div>
         </div>
-        <div class="stack-item"><span class="stack-name">React / Next.js</span><span class="stack-tag">Primary</span></div>
-        <div class="stack-item"><span class="stack-name">TypeScript</span><span class="stack-tag">Core</span></div>
-        <div class="stack-item"><span class="stack-name">Tailwind CSS</span><span class="stack-tag">Styling</span></div>
-        <div class="stack-item"><span class="stack-name">Modern JS (ES6+)</span><span class="stack-tag">Full</span></div>
-      </div>
-      <div class="stack-col">
-        <div class="stack-col-header">
-          <i class="ti ti-server stack-col-icon" aria-hidden="true"></i>
-          <span class="stack-col-title">Backend</span>
+        <div class="stack-col">
+            <div class="stack-col-header">
+                <i class="ti ti-server stack-col-icon" aria-hidden="true"></i>
+                <span class="stack-col-title">Backend</span>
+            </div>
+            <div class="stack-item"><span class="stack-name">Node.js</span><span class="stack-tag">Primary</span></div>
+            <div class="stack-item"><span class="stack-name">Python</span><span class="stack-tag">Expert</span></div>
+            <div class="stack-item"><span class="stack-name">PostgreSQL</span><span class="stack-tag">Rel.</span></div>
+            <div class="stack-item"><span class="stack-name">Redis</span><span class="stack-tag">Cache</span></div>
         </div>
-        <div class="stack-item"><span class="stack-name">Node.js</span><span class="stack-tag">Primary</span></div>
-        <div class="stack-item"><span class="stack-name">Python</span><span class="stack-tag">Expert</span></div>
-        <div class="stack-item"><span class="stack-name">PostgreSQL</span><span class="stack-tag">Rel.</span></div>
-        <div class="stack-item"><span class="stack-name">Redis</span><span class="stack-tag">Cache</span></div>
-      </div>
-      <div class="stack-col">
-        <div class="stack-col-header">
-          <i class="ti ti-cloud stack-col-icon" aria-hidden="true"></i>
-          <span class="stack-col-title">Infrastructure</span>
+        <div class="stack-col">
+            <div class="stack-col-header">
+                <i class="ti ti-cloud stack-col-icon" aria-hidden="true"></i>
+                <span class="stack-col-title">Infrastructure</span>
+            </div>
+            <div class="stack-item"><span class="stack-name">AWS / Azure</span><span class="stack-tag">Multi</span></div>
+            <div class="stack-item"><span class="stack-name">Docker / K8s</span><span class="stack-tag">Scale</span></div>
+            <div class="stack-item"><span class="stack-name">GitHub Actions</span><span class="stack-tag">CI/CD</span></div>
+            <div class="stack-item"><span class="stack-name">Terraform</span><span class="stack-tag">IaC</span></div>
         </div>
-        <div class="stack-item"><span class="stack-name">AWS / Azure</span><span class="stack-tag">Multi</span></div>
-        <div class="stack-item"><span class="stack-name">Docker / K8s</span><span class="stack-tag">Scale</span></div>
-        <div class="stack-item"><span class="stack-name">GitHub Actions</span><span class="stack-tag">CI/CD</span></div>
-        <div class="stack-item"><span class="stack-name">Terraform</span><span class="stack-tag">IaC</span></div>
-      </div>
-      <div class="stack-col">
-        <div class="stack-col-header">
-          <i class="ti ti-chart-dots stack-col-icon" aria-hidden="true"></i>
-          <span class="stack-col-title">Strategy</span>
+        <div class="stack-col">
+            <div class="stack-col-header">
+                <i class="ti ti-chart-dots stack-col-icon" aria-hidden="true"></i>
+                <span class="stack-col-title">Strategy</span>
+            </div>
+            <div class="stack-item"><span class="stack-name">System Design</span><span class="stack-tag">Core</span></div>
+            <div class="stack-item"><span class="stack-name">Microservices</span><span class="stack-tag">Pattern</span></div>
+            <div class="stack-item"><span class="stack-name">REST / GraphQL</span><span class="stack-tag">APIs</span></div>
+            <div class="stack-item"><span class="stack-name">AI Integrations</span><span class="stack-tag">New</span></div>
         </div>
-        <div class="stack-item"><span class="stack-name">System Design</span><span class="stack-tag">Core</span></div>
-        <div class="stack-item"><span class="stack-name">Microservices</span><span class="stack-tag">Pattern</span></div>
-        <div class="stack-item"><span class="stack-name">REST / GraphQL</span><span class="stack-tag">APIs</span></div>
-        <div class="stack-item"><span class="stack-name">AI Integrations</span><span class="stack-tag">New</span></div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
+<!-- PORTFOLIO -->
+<section id="portfolio">
     <div class="section-label">Portfolio — selected projects</div>
     <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-tag">SaaS · Node.js · React</div>
-        <div class="project-title">Project Alpha</div>
-        <div class="project-desc">Multi-tenant SaaS platform with real-time analytics dashboard and role-based access control.</div>
-        <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
-      </div>
-      <div class="project-card">
-        <div class="project-tag">API · Python · PostgreSQL</div>
-        <div class="project-title">Data Pipeline Engine</div>
-        <div class="project-desc">High-throughput ETL system processing 50M+ records daily with automated error recovery.</div>
-        <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
-      </div>
-      <div class="project-card">
-        <div class="project-tag">Mobile · React Native</div>
-        <div class="project-title">Field Service App</div>
-        <div class="project-desc">Offline-first mobile application for field technicians with sync and GPS tracking.</div>
-        <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
-      </div>
+        <div class="project-card">
+            <div class="project-tag">SaaS · Node.js · React</div>
+            <div class="project-title">Project Alpha</div>
+            <div class="project-desc">Multi-tenant SaaS platform with real-time analytics dashboard and role-based access control.</div>
+            <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
+        </div>
+        <div class="project-card">
+            <div class="project-tag">API · Python · PostgreSQL</div>
+            <div class="project-title">Data Pipeline Engine</div>
+            <div class="project-desc">High-throughput ETL system processing 50M+ records daily with automated error recovery.</div>
+            <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
+        </div>
+        <div class="project-card">
+            <div class="project-tag">Mobile · React Native</div>
+            <div class="project-title">Field Service App</div>
+            <div class="project-desc">Offline-first mobile application for field technicians with sync and GPS tracking.</div>
+            <a href="#" class="project-link"><i class="ti ti-external-link" aria-hidden="true"></i> view case study</a>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- INTEGRATIONS -->
-  <section id="integrations">
+<!-- INTEGRATIONS -->
+<section id="integrations">
     <div class="section-label">Integrations & optimisation</div>
     <div class="integrations-grid">
-      <div>
-        <h2>Connecting systems that actually work together.</h2>
-        <p>I specialise in bridging distributed ecosystems into one coherent, efficient whole. Removing bottlenecks and automating processes that slow your business down.</p>
-        <div class="integration-item">
-          <i class="ti ti-activity integration-icon" aria-hidden="true"></i>
-          <div>
-            <div class="integration-title">Performance audits</div>
-            <div class="integration-desc">Deep analysis of code and infrastructure for cost and speed optimisation.</div>
-          </div>
+        <div>
+            <h2>Connecting systems that actually work together.</h2>
+            <p>I specialise in bridging distributed ecosystems into one coherent, efficient whole. Removing bottlenecks and automating processes that slow your business down.</p>
+            <div class="integration-item">
+                <i class="ti ti-activity integration-icon" aria-hidden="true"></i>
+                <div>
+                    <div class="integration-title">Performance audits</div>
+                    <div class="integration-desc">Deep analysis of code and infrastructure for cost and speed optimisation.</div>
+                </div>
+            </div>
+            <div class="integration-item">
+                <i class="ti ti-api integration-icon" aria-hidden="true"></i>
+                <div>
+                    <div class="integration-title">Middleware & API design</div>
+                    <div class="integration-desc">Secure, scalable interfaces for seamless system-to-system communication.</div>
+                </div>
+            </div>
         </div>
-        <div class="integration-item">
-          <i class="ti ti-api integration-icon" aria-hidden="true"></i>
-          <div>
-            <div class="integration-title">Middleware & API design</div>
-            <div class="integration-desc">Secure, scalable interfaces for seamless system-to-system communication.</div>
-          </div>
+        <div class="status-card">
+            <div class="status-header">// system.status</div>
+            <div class="status-row">
+                <div class="status-dot"></div>
+                <span>API Gateway</span>
+                <div class="status-bar-wrap"><div class="status-bar" style="width:94%"></div></div>
+                <span style="font-size:11px;opacity:0.5">94%</span>
+            </div>
+            <div class="status-row">
+                <div class="status-dot"></div>
+                <span>Database cluster</span>
+                <div class="status-bar-wrap"><div class="status-bar" style="width:99%"></div></div>
+                <span style="font-size:11px;opacity:0.5">99%</span>
+            </div>
+            <div class="status-row">
+                <div class="status-dot"></div>
+                <span>CI/CD pipeline</span>
+                <div class="status-bar-wrap"><div class="status-bar" style="width:88%"></div></div>
+                <span style="font-size:11px;opacity:0.5">88%</span>
+            </div>
+            <div class="status-row">
+                <div class="status-dot"></div>
+                <span>Edge functions</span>
+                <div class="status-bar-wrap"><div class="status-bar" style="width:97%"></div></div>
+                <span style="font-size:11px;opacity:0.5">97%</span>
+            </div>
+            <div class="status-footer">● Systems Operational · Efficiency Optimised</div>
         </div>
-      </div>
-      <div class="status-card">
-        <div class="status-header">// system.status</div>
-        <div class="status-row">
-          <div class="status-dot"></div>
-          <span>API Gateway</span>
-          <div class="status-bar-wrap"><div class="status-bar" style="width:94%"></div></div>
-          <span style="font-size:11px;opacity:0.5">94%</span>
-        </div>
-        <div class="status-row">
-          <div class="status-dot"></div>
-          <span>Database cluster</span>
-          <div class="status-bar-wrap"><div class="status-bar" style="width:99%"></div></div>
-          <span style="font-size:11px;opacity:0.5">99%</span>
-        </div>
-        <div class="status-row">
-          <div class="status-dot"></div>
-          <span>CI/CD pipeline</span>
-          <div class="status-bar-wrap"><div class="status-bar" style="width:88%"></div></div>
-          <span style="font-size:11px;opacity:0.5">88%</span>
-        </div>
-        <div class="status-row">
-          <div class="status-dot"></div>
-          <span>Edge functions</span>
-          <div class="status-bar-wrap"><div class="status-bar" style="width:97%"></div></div>
-          <span style="font-size:11px;opacity:0.5">97%</span>
-        </div>
-        <div class="status-footer">● Systems Operational · Efficiency Optimised</div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services">
+<!-- SERVICES -->
+<section id="services">
     <div class="section-label">Services</div>
     <div class="service-row">
-      <div>
-        <div class="service-name">Full-stack development</div>
-        <div class="service-tech">React · Node.js · Next.js · TypeScript</div>
-      </div>
-      <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
+        <div>
+            <div class="service-name">Full-stack development</div>
+            <div class="service-tech">React · Node.js · Next.js · TypeScript</div>
+        </div>
+        <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
     </div>
     <div class="service-row">
-      <div>
-        <div class="service-name">API design & backend architecture</div>
-        <div class="service-tech">REST · GraphQL · Microservices · PostgreSQL</div>
-      </div>
-      <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
+        <div>
+            <div class="service-name">API design & backend architecture</div>
+            <div class="service-tech">REST · GraphQL · Microservices · PostgreSQL</div>
+        </div>
+        <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
     </div>
     <div class="service-row">
-      <div>
-        <div class="service-name">Technical consulting & code review</div>
-        <div class="service-tech">Architecture audits · Performance · Security</div>
-      </div>
-      <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
+        <div>
+            <div class="service-name">Technical consulting & code review</div>
+            <div class="service-tech">Architecture audits · Performance · Security</div>
+        </div>
+        <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
     </div>
     <div class="service-row">
-      <div>
-        <div class="service-name">Legacy system modernisation</div>
-        <div class="service-tech">Refactoring · Migration · Documentation</div>
-      </div>
-      <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
+        <div>
+            <div class="service-name">Legacy system modernisation</div>
+            <div class="service-tech">Refactoring · Migration · Documentation</div>
+        </div>
+        <i class="ti ti-arrow-right" style="color:var(--blue)" aria-hidden="true"></i>
     </div>
-  </section>
+</section>
 
-  <!-- WRITING -->
-  <section id="writing">
+<!-- WRITING -->
+<section id="writing">
     <div class="section-label">Writing</div>
     <div class="articles-grid">
-      <a href="#" class="article-card">
-        <div class="article-date">March 2025</div>
-        <div class="article-title">Designing event-driven microservices that don't become a nightmare</div>
-        <div class="article-tag">↗ architecture</div>
-      </a>
-      <a href="#" class="article-card">
-        <div class="article-date">January 2025</div>
-        <div class="article-title">PostgreSQL query optimisation: the patterns nobody talks about</div>
-        <div class="article-tag">↗ databases</div>
-      </a>
-      <a href="#" class="article-card">
-        <div class="article-date">November 2024</div>
-        <div class="article-title">When to reach for a monolith and when to split it apart</div>
-        <div class="article-tag">↗ architecture</div>
-      </a>
-      <a href="#" class="article-card">
-        <div class="article-date">September 2024</div>
-        <div class="article-title">Type-safe API contracts with TypeScript and Zod in production</div>
-        <div class="article-tag">↗ typescript</div>
-      </a>
+        <a href="#" class="article-card">
+            <div class="article-date">March 2025</div>
+            <div class="article-title">Designing event-driven microservices that don't become a nightmare</div>
+            <div class="article-tag">↗ architecture</div>
+        </a>
+        <a href="#" class="article-card">
+            <div class="article-date">January 2025</div>
+            <div class="article-title">PostgreSQL query optimisation: the patterns nobody talks about</div>
+            <div class="article-tag">↗ databases</div>
+        </a>
+        <a href="#" class="article-card">
+            <div class="article-date">November 2024</div>
+            <div class="article-title">When to reach for a monolith and when to split it apart</div>
+            <div class="article-tag">↗ architecture</div>
+        </a>
+        <a href="#" class="article-card">
+            <div class="article-date">September 2024</div>
+            <div class="article-title">Type-safe API contracts with TypeScript and Zod in production</div>
+            <div class="article-tag">↗ typescript</div>
+        </a>
     </div>
-  </section>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
+<!-- CONTACT -->
+<section id="contact">
     <div class="section-label">Contact</div>
-    <div class="contact-grid">
-      <div>
-        <h2>Let's build something together.</h2>
-        <p>Available for freelance projects, consulting engagements, and long-term contracts. Typically respond within 24 hours.</p>
+    <div>
+        <h2 style="font-size:2rem;font-weight:700;letter-spacing:-0.5px;margin-bottom:1rem;">Let's build something together.</h2>
+        <p style="font-family:var(--FM);font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:520px;">Available for freelance projects, consulting engagements, and long-term contracts. Typically respond within 24 hours.</p>
         <div class="contact-info">
-          <div class="contact-row">
-            <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
-            <span class="contact-val"><a href="mailto:adrian@ipronet.dev">adrian@ipronet.dev</a></span>
-          </div>
-          <div class="contact-row">
-            <i class="ti ti-brand-linkedin contact-icon" aria-hidden="true"></i>
-            <span class="contact-val"><a href="https://linkedin.com/in/adriandudek" target="_blank" rel="noopener">linkedin.com/in/adriandudek</a></span>
-          </div>
-          <div class="contact-row">
-            <i class="ti ti-brand-github contact-icon" aria-hidden="true"></i>
-            <span class="contact-val"><a href="https://github.com/adriandudek" target="_blank" rel="noopener">github.com/adriandudek</a></span>
-          </div>
+            <div class="contact-row">
+                <i class="ti ti-mail contact-icon" aria-hidden="true"></i>
+                <span class="contact-val">
+            <a id="contact-email" href="#" style="color:var(--muted);text-decoration:none;"></a>
+          </span>
+            </div>
+            <div class="contact-row">
+                <i class="ti ti-brand-linkedin contact-icon" aria-hidden="true"></i>
+                <span class="contact-val"><a href="https://www.linkedin.com/in/adrian-dudek-087a5a44/" target="_blank" rel="noopener">linkedin.com/in/adrian-dudek</a></span>
+            </div>
         </div>
-      </div>
-      <div>
-        <div class="form-group"><input type="text" name="name" placeholder="Your name" autocomplete="name" /></div>
-        <div class="form-group"><input type="email" name="email" placeholder="Email address" autocomplete="email" /></div>
-        <div class="form-group"><textarea name="message" placeholder="Tell me about your project..."></textarea></div>
-        <!-- Replace action with your Formspree/Netlify Forms endpoint -->
-        <button type="submit" class="btn-primary" style="width:100%;border:none;cursor:pointer">Send message →</button>
-      </div>
     </div>
-  </section>
+</section>
+<script>
+    (function() {
+      var u = 'biuro', d = 'ipronet.com.pl';
+      var el = document.getElementById('contact-email');
+      el.href = 'mailto:' + u + '\x40' + d;
+      el.textContent = u + '\x40' + d;
+    })();
+</script>
 
-  <!-- FOOTER -->
-  <footer>
+<!-- FOOTER -->
+<footer>
     <div class="footer-logo">
-      <a href="#home"><img src="logo.png" alt="IPronet" /></a>
+        <a href="#home"><img src="logo.png" alt="IPronet" /></a>
     </div>
     <div class="footer-right">
-      <div class="footer-name">Adrian Dudek</div>
-      <div class="footer-copy">© 2026 IPronet. All rights reserved.</div>
+        <div class="footer-name">Adrian Dudek</div>
+        <div class="footer-copy">© 2026 IPronet. All rights reserved.</div>
     </div>
-  </footer>
+</footer>
 
 </body>
 </html>
